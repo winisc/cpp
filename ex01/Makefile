@@ -6,7 +6,7 @@
 #    By: wini <wini@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/15 01:28:20 by wini              #+#    #+#              #
-#    Updated: 2026/06/15 03:34:08 by wini             ###   ########.fr        #
+#    Updated: 2026/06/15 03:43:25 by wini             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,9 @@ NAME	= phonebook
 CXX		= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-SRCS	= phonebook.cpp utils.cpp
+SRCS	= main.cpp PhoneBook.cpp utils.cpp
 OBJS	= $(SRCS:.cpp=.o)
-HDRS	= phonebook.h
+HDRS	= PhoneBook.hpp Contact.hpp
 
 all: $(NAME)
 

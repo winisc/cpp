@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wini <wini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 01:28:20 by wini              #+#    #+#             */
-/*   Updated: 2026/06/15 03:36:21 by wini             ###   ########.fr       */
+/*   Updated: 2026/06/15 03:52:03 by wini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.h"
+#include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook(void) : _count(0) {}
 
@@ -37,13 +37,12 @@ void PhoneBook::addContact(void)
     std::cout << "\nContact added successfully." << std::endl;
 }
 
-void PhoneBook::searchContact(void) const
+void PhoneBook::displayList(void) const
 {
-    int         idx;
-    std::string input;
+    int idx;
 
     idx = 0;
-    std::cout << std::endl;;
+    std::cout << std::endl;
     std::cout << std::right;
     std::cout << std::setw(10) << "index" << "|";
     std::cout << std::setw(10) << "first name" << "|";
@@ -57,6 +56,24 @@ void PhoneBook::searchContact(void) const
         std::cout << std::setw(10) << ft_truncate(_contacts[idx].getNickname()) << std::endl;
         idx++;
     }
+}
+
+void PhoneBook::displayContact(int idx) const
+{
+    std::cout << "---------------------------------------" << std::endl;
+    std::cout << "First name: " << _contacts[idx].getFirstName() << std::endl;
+    std::cout << "Last name:  " << _contacts[idx].getLastName() << std::endl;
+    std::cout << "Number:     " << _contacts[idx].getNumber() << std::endl;
+    std::cout << "Secret:     " << _contacts[idx].getSecret() << std::endl;
+    std::cout << "---------------------------------------" << std::endl;
+}
+
+void PhoneBook::searchContact(void) const
+{
+    int         idx;
+    std::string input;
+
+    displayList();
     if (_count == 0)
         return;
     std::cout << "\nIndex: ";
@@ -67,40 +84,5 @@ void PhoneBook::searchContact(void) const
         std::cout << "\nInvalid index." << std::endl;
         return ;
     }
-    std::cout << "---------------------------------------" << std::endl;
-    std::cout << "First name: " << _contacts[idx].getFirstName() << std::endl;
-    std::cout << "Last name:  " << _contacts[idx].getLastName() << std::endl;
-    std::cout << "Number:     " << _contacts[idx].getNumber() << std::endl;
-    std::cout << "Secret:     " << _contacts[idx].getSecret() << std::endl;
-    std::cout << "---------------------------------------" << std::endl;
-}
-
-int process_program(std::string input, PhoneBook &book)
-{ 
-    if (input == "ADD")
-        book.addContact();
-    else if (input == "SEARCH")
-        book.searchContact();
-    else if (input == "EXIT")   
-        return EXIT;
-    else
-        std::cout << "\nError: Command not found." << std::endl;
-    return CONTINUE;
-}
-
-int main(void)
-{
-    std::string input;
-    PhoneBook book;
-
-    start_header();
-    while (true)
-    {
-        std::cout << "\nCommand: ";
-        if (!std::getline(std::cin, input))
-            break ;
-        if (process_program(input, book) == EXIT)
-            break;
-    }
-    return (0);
+    displayContact(idx);
 }

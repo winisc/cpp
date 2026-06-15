@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.h                                        :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wini <wini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/15 01:47:14 by wini              #+#    #+#             */
-/*   Updated: 2026/06/15 03:36:18 by wini             ###   ########.fr       */
+/*   Created: 2026/06/15 03:53:31 by wini              #+#    #+#             */
+/*   Updated: 2026/06/15 03:53:32 by wini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_H
-# define PHONEBOOK_H
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
 
 # include <string>
-# include <iostream>
-#include <iomanip>
-#include <cstdlib>
-
-# define MAX_CONTACTS 8
-# define EXIT 1
-# define CONTINUE 0
-
 
 class Contact {
 private:
@@ -43,18 +35,4 @@ public:
     std::string getSecret(void) const          { return _secret; }
 };
 
-class PhoneBook {
-private:
-    Contact _contacts[MAX_CONTACTS];
-    int     _count;
-public:
-    PhoneBook();
-    void addContact(void);
-    void searchContact(void) const;
-};
-
-std::string ft_truncate(std::string s);
-void        start_header();
-
 #endif
-
