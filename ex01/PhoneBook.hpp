@@ -6,7 +6,7 @@
 /*   By: wini <wini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 03:53:39 by wini              #+#    #+#             */
-/*   Updated: 2026/06/15 03:53:40 by wini             ###   ########.fr       */
+/*   Updated: 2026/06/19 11:16:13 by wini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ private:
     Contact _contacts[MAX_CONTACTS];
     int     _count;
 public:
-    PhoneBook();
+	PhoneBook();
     void addContact(void);
     void searchContact(void) const;
     void displayContact(int idx) const;

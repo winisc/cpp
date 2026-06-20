@@ -6,13 +6,13 @@
 /*   By: wini <wini@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 01:28:20 by wini              #+#    #+#             */
-/*   Updated: 2026/06/15 03:52:03 by wini             ###   ########.fr       */
+/*   Updated: 2026/06/19 11:16:00 by wini             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook(void) : _count(0) {}
+PhoneBook::PhoneBook( void ) : _count(0) {}
 
 void PhoneBook::addContact(void)
 {
