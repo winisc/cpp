@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wini <wini@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: wsilveir <wsilveir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 03:53:39 by wini              #+#    #+#             */
-/*   Updated: 2026/06/20 01:29:15 by wini             ###   ########.fr       */
+/*   Updated: 2026/06/20 16:12:56 by wsilveir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,7 @@ public:
     void announce( void );
 };
 
+Zombie* newZombie( std::string name );
+void    randomChump( std::string name );
 
 #endif

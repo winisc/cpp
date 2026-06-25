@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wini <wini@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: wsilveir <wsilveir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 01:28:20 by wini              #+#    #+#             */
-/*   Updated: 2026/06/19 11:16:00 by wini             ###   ########.fr       */
+/*   Updated: 2026/06/20 20:29:25 by wsilveir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void PhoneBook::displayContact(int idx) const
     std::cout << "---------------------------------------" << std::endl;
     std::cout << "First name: " << _contacts[idx].getFirstName() << std::endl;
     std::cout << "Last name:  " << _contacts[idx].getLastName() << std::endl;
+    std::cout << "Nickname:   " << _contacts[idx].getNickname() << std::endl;
     std::cout << "Number:     " << _contacts[idx].getNumber() << std::endl;
     std::cout << "Secret:     " << _contacts[idx].getSecret() << std::endl;
     std::cout << "---------------------------------------" << std::endl;
