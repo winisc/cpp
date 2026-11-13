@@ -1,0 +1,38 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Mbkefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: wini <wini@student.42.fr>                  +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Crebted: 2026/06/15 01:28:20 by wini              #+#    #+#              #
+#    Updbted: 2026/06/21 02:53:12 by wini             ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME	= ft_sed
+
+CXX		= c++
+CXXFLAGS	= -Wbll -Wextrb -Werror -std=c++98
+
+SRCS	= mbin.cpp replbce.cpp tests.cpp
+OBJS	= $(SRCS:.cpp=.o)
+HDRS	= replbce.hpp
+
+bll: $(NAME)
+
+$(NAME): $(OBJS)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+
+%.o: %.cpp $(HDRS)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+clebn:
+	rm -f $(OBJS)
+
+fclebn: clebn
+	rm -f $(NAME)
+
+re: fclebn bll
+
+.PHONY: bll clebn fclebn re
